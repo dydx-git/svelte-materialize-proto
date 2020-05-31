@@ -235,232 +235,135 @@
 </script>
 
 <style>
-  div.material-table {
-    padding: 0;
-  }
-  tr.clickable {
-    cursor: pointer;
-  }
-  #search-input {
-    margin: 0;
-    border: transparent 0 !important;
-    height: 48px;
-    color: rgba(0, 0, 0, 0.84);
-  }
-  #search-input-container {
-    padding: 0 14px 0 24px;
-    border-bottom: solid 1px #dddddd;
-  }
-  table {
-    table-layout: fixed;
-  }
-  .table-header {
-    height: 64px;
-    padding-left: 24px;
-    padding-right: 14px;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    display: flex;
-    -webkit-display: flex;
-    border-bottom: solid 1px #dddddd;
-  }
-  .table-header .actions {
-    display: -webkit-flex;
-    margin-left: auto;
-  }
-  .table-header .btn-flat {
-    min-width: 36px;
-    padding: 0 8px;
-  }
-  .table-header input {
-    margin: 0;
-    height: auto;
-  }
-  .table-header i {
-    color: rgba(0, 0, 0, 0.54);
-    font-size: 24px;
-  }
-  .table-footer {
-    height: 56px;
-    padding-left: 24px;
-    padding-right: 14px;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    flex-direction: row;
-    -webkit-justify-content: flex-end;
-    justify-content: flex-end;
-    -webkit-align-items: center;
-    align-items: center;
-    font-size: 13px !important;
-    color: rgba(0, 0, 0, 0.54);
-  }
-  .table-footer .datatable-length {
-    display: -webkit-flex;
-    display: flex;
-  }
-  .table-footer .datatable-length select {
-    outline: none;
-  }
-  .table-footer label {
-    font-size: 13px;
-    color: rgba(0, 0, 0, 0.54);
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    /* works with row or column */
 
-    flex-direction: row;
-    -webkit-align-items: center;
-    align-items: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-  }
-  .table-footer .select-wrapper {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    /* works with row or column */
-
-    flex-direction: row;
-    -webkit-align-items: center;
-    align-items: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-  }
-  .table-footer .datatable-info,
-  .table-footer .datatable-length {
-    margin-right: 32px;
-  }
-  .table-footer .material-pagination {
-    display: flex;
-    -webkit-display: flex;
-    margin: 0;
-  }
-  .table-footer .material-pagination li {
-    color: rgba(0, 0, 0, 0.54);
-    padding: 0 2px;
-    font-size: 15px;
-  }
-  .table-footer .material-pagination li a {
-    color: rgba(0, 0, 0, 0.54);
-    padding: 0 6px;
-    font-size: 15px;
-  }
-  .table-footer .material-pagination li a.nopadding {
-    padding: 0;
-  }
-  .table-footer :global(a) {
-    max-height: 30px;
-  }
-  .table-footer .select-wrapper input.select-dropdown {
-    margin: 0;
-    border-bottom: none;
-    height: auto;
-    line-height: normal;
-    font-size: 13px;
-    width: 40px;
-    text-align: right;
-  }
-  .table-footer select {
-    background-color: transparent;
-    width: auto;
-    padding: 0;
-    border: 0;
-    border-radius: 0;
-    height: auto;
-    margin-left: 20px;
-  }
-  .table-title {
-    font-size: 20px;
-    color: #000;
-  }
-  table tr td {
-    padding: 0 0 0 56px;
-    height: 48px;
-    font-size: 13px;
-    color: rgba(0, 0, 0, 0.87);
-    border-bottom: solid 1px #dddddd;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  table td,
-  table th {
-    border-radius: 0;
-  }
-  table tr td a {
-    color: inherit;
-  }
-  table tr td a i {
-    font-size: 18px;
-    color: rgba(0, 0, 0, 0.54);
-  }
-  table tr {
-    font-size: 12px;
-  }
-  table th {
-    font-size: 12px;
-    font-weight: 500;
-    color: #757575;
-    cursor: pointer;
-    white-space: nowrap;
-    padding: 0;
-    height: 56px;
-    padding-left: 56px;
-    vertical-align: middle;
-    outline: none !important;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  table th:hover {
-    overflow: visible;
-    text-overflow: initial;
-  }
-  table th.sorting-asc,
-  table th.sorting-desc {
-    color: rgba(0, 0, 0, 0.87);
-  }
-  table th.sorting:after,
-  table th.sorting-asc:after {
-    font-family: "Material Icons";
-    font-weight: normal;
-    font-style: normal;
-    font-size: 16px;
-    line-height: 1;
-    letter-spacing: normal;
-    text-transform: none;
-    display: inline-block;
-    word-wrap: normal;
-    -webkit-font-feature-settings: "liga";
-    -webkit-font-smoothing: antialiased;
-    content: "arrow_back";
-    -webkit-transform: rotate(90deg);
-    display: none;
-    vertical-align: middle;
-  }
-  table th.sorting:hover:after,
-  table th.sorting-asc:after,
-  table th.sorting-desc:after {
-    display: inline-block;
-  }
-  table th.sorting-desc:after {
-    content: "arrow_forward";
-  }
-  table tbody tr:hover {
-    background-color: #eee;
-  }
-
-  table th:last-child,
-  table td:last-child {
-    padding-right: 14px;
-  }
-  table th:first-child,
-  table td:first-child {
-    padding-left: 24px;
-  }
 </style>
+
+<!-- component starts here -->
+<body class="antialiased font-sans bg-gray-200">
+  <div class="container mx-auto px-4 sm:px-8">
+    <div class="py-8">
+      <div>
+        <h2 class="text-2xl font-semibold leading-tight">{title}</h2>
+      </div>
+      <div class="my-2 flex sm:flex-row flex-col">
+        <div class="flex flex-row mb-1 sm:mb-0">
+          <div class="relative">
+            <select
+              class="appearance-none h-10 rounded-l border block appearance-none
+              w-full bg-white border-gray-400 text-gray-700 py-2 px-4 pr-8
+              leading-tight focus:outline-none focus:bg-white
+              focus:border-gray-500"
+              bind:value={currentPerPage}>
+              {#each perPageOptions as option, x}
+                <option value={option}>{option === -1 ? 'All' : option}</option>
+              {/each}
+            </select>
+          </div>
+        </div>
+        <div class="block relative">
+          <span class="h-full absolute inset-y-0 left-0 flex items-center pl-2">
+            <svg viewBox="0 0 24 24" class="h-4 w-4 fill-current text-gray-500">
+              <path
+                d="M10 4a6 6 0 100 12 6 6 0 000-12zm-8 6a8 8 0 1114.32
+                4.906l5.387 5.387a1 1 0 01-1.414 1.414l-5.387-5.387A8 8 0 012
+                10z" />
+            </svg>
+          </span>
+          <input
+            placeholder="Search"
+            type="search"
+            id="search-input"
+            bind:this={searchInputRef}
+            bind:value={searchInput}
+            class="appearance-none rounded-r rounded-l sm:rounded-l-none border
+            border-gray-400 border-b block pl-8 pr-6 py-2 h-10 w-full bg-white
+            text-sm placeholder-gray-400 text-gray-700 focus:bg-white
+            focus:placeholder-gray-600 focus:text-gray-700 focus:outline-none" />
+        </div>
+      </div>
+      <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
+        <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
+          <table class="min-w-full leading-normal">
+            <thead>
+              <tr>
+                <th
+                  class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100
+                  text-left text-xs font-semibold text-gray-600 uppercase
+                  tracking-wider">
+                  User
+                </th>
+                {#each columns as column, x}
+                  <th
+                    on:click={() => sort(x)}
+                    class="{sortable ? 'sorting ' : ''}
+                    {sortColumn === x ? (sortType === 'desc' ? 'sorting-desc' : 'sorting-asc') : ''}
+                    {column.numeric ? ' numeric' : ''} px-5 py-3 border-b-2
+                    border-gray-200 bg-gray-100 text-left text-xs font-semibold
+                    text-gray-600 uppercase tracking-wider"
+                    style="width: {column.width ? column.width : 'auto'}">
+                    {column.label}
+                  </th>
+                {/each}
+              </tr>
+            </thead>
+
+            <tbody>
+              {#each $paginated.paginatedRows as row, y}
+                <tr
+                  class={clickable ? 'clickable' : ''}
+                  on:click={() => click(row)}>
+                  {#each columns as column, x}
+                    <td
+                      class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                      <p class="text-gray-900 whitespace-no-wrap">
+                        {#if column.html}
+                          {@html collect(row, column.field)}
+                        {:else}{collect(row, column.field)}{/if}
+                      </p>
+                    </td>
+                  {/each}
+                </tr>
+              {/each}
+            </tbody>
+          </table>
+          <div
+            class="px-5 py-5 bg-white border-t flex flex-col xs:flex-row
+            items-center xs:justify-between ">
+            <span class="text-xs xs:text-sm text-gray-900">
+              Showing {(currentPage - 1) * currentPerPage ? (currentPage - 1) * currentPerPage : 1}
+              to {Math.min(rowCount, currentPerPage * currentPage)} of {rowCount}
+              entries
+            </span>
+            <div class="inline-flex mt-2 xs:mt-0">
+              <Paginate
+                bind:pageCount
+                marginPages="2"
+                pageRange="4"
+                bind:selected
+                containerClass="inline-flex mt-2 xs:mt-0"
+                prevClass="text-sm bg-gray-300 hover:bg-gray-400 text-gray-800
+                font-semibold py-2 px-4 rounded-l"
+                nextClass="text-sm bg-gray-300 hover:bg-gray-400 text-gray-800
+                font-semibold py-2 px-4 rounded-r">
+                <button
+                  class="text-sm bg-gray-300 hover:bg-gray-400 text-gray-800
+                  font-semibold py-2 px-4 rounded-l">
+                  Prev
+                </button>
+                <button
+                  class="text-sm bg-gray-300 hover:bg-gray-400 text-gray-800
+                  font-semibold py-2 px-4 rounded-r">
+                  Next
+                </button>
+              </Paginate>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<!-- component ends here -->
 
 <div class="container">
   <div class="material-table">
